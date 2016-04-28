@@ -1,0 +1,42 @@
+body {
+  background-color: #F5F5F5; }
+
+#up {
+  border: none;
+  background-color: #B0BEC5;
+  z-index: 100 !important; }
+
+#up:hover {
+  border: none;
+  background-color: #CFD8DC; }
+
+#uploader {
+  position: absolute;
+  width: 98.5%;
+  bottom: -35vh; }
+
+#add {
+  position: absolute;
+  border-radius: 50%;
+  width: 21px;
+  height: 20px;
+  background-color: #78909C;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  color: #fff;
+  padding-top: 0px;
+  padding-bottom: 3px;
+  font-size: 19px;
+  cursor: pointer; }
+
+h4 {
+  color: #999999;
+  margin-top: -1.5em;
+  width: 10em; }
+
+#container {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  z-index: 0; }

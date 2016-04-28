@@ -1,0 +1,45 @@
+{
+  "name": "starter",
+  "version": "1.0.1",
+  "description": "Protoype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back:watch": "./node_modules/nodemon/bin/nodemon.js ./back/index.js",
+    "build:js": "watchify -d -t [ babelify ] front/app.js -o ./front/dist/build.js",
+    "build:css": "./node_modules/.bin/node-sass -w ./front/app.scss ./front/dist/build.css",
+    "start": "npm run back:watch & npm run build:js & npm run build:css"
+  },
+  "author": "q.tshaimanga@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
+    "babelify": "^7.2.0",
+    "body-parser": "^1.15.0",
+    "csvtojson": "^0.5.3",
+    "express": "^4.13.4",
+    "gsap": "^1.18.3",
+    "lodash": "^3.10.1",
+    "lowdb": "^0.10.2",
+    "multer": "^1.1.0",
+    "node-sass": "^3.5.3",
+    "nodemon": "^1.9.1",
+    "path": "^0.12.7",
+    "pm2": "^1.0.2",
+    "raf": "^3.2.0",
+    "watchify": "^3.7.0",
+    "watchjs": "0.0.0"
+  },
+  "config": {
+    "unsafe-perm": true
+  },
+  "engines": {
+    "node": ">=0.12.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="q.tshaimanga@gmail.com">
+    <meta name="csrf-token" content="CL2tR2J4UHZXcR9BjRtSYOKzSmL8U1zTc7T8d6Jz">
+
+    <title> © EDF - Laboratoire I&sup2R</title>
+
+    <link rel="stylesheet" type="text/css" href="./dist/build.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/dropzone/dropzone.css" />
+    <!--
+    <link rel="stylesheet" type="text/css" href="./lib/impress/impress.css" />
+    -->
+
+    <script type="text/javascript" src="./dist/build.js"></script>
+    <script type="text/javascript" src="./lib/dropzone/dropzone.js"></script>
+
+  </head>
+  <body>
+    <div id="container">
+
+        <div id="uploader">
+          <form id="up" action="http://localhost:9000/upload" method="post" enctype="multipart/form-data" class="dropzone">
+            <!--<input type="file" name="file" />-->
+          </form>
+        </div>
+
+        <div id="add">
+          &nbsp;+
+        </div>
+
+        <!--PARAMS
+              data-x="3000"
+              data-y="1500"
+              data-z="-3000"
+              data-scale="6"
+              data-rotate="270"
+        -->
+        <div id="impress">
+          <div id="overview" class="step" data-x="7000" data-y="4500" data-scale="12"></div>
+
+          <div id="renderer">
+          </div>
+        </div>
+        
+    </div>
+
+
+
+    <script>
+      Dropzone.options.up = {
+        headers: {
+            'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value,
+          }
+      };
+
+      if ("ontouchstart" in document.documentElement) {
+          document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+      }
+
+    </script>
+    <script type="text/javascript" src="./lib/impress/impress.js"></script>
+    <script></script>
+  </body>
+</html>
